@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html lang="no">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Energirapport - Fagmann Digital</title>
   <meta name="description" content="Få din personlige energirapport med Enova-støtte analyse">
   <meta name="theme-color" content="#6B1B9A">
-
+  
   <style>
-    /* ═══════════════════════════════════════════════════════════════════════════
-       FAGMANN DIGITAL - DESIGN SYSTEM (Inline for standalone HTML)
-       ═══════════════════════════════════════════════════════════════════════════ */
-
     :root {
-      /* Brandfarger - Fagmann Digital */
       --fg-primary: #6B1B9A;
       --fg-primary-dark: #4A0E6B;
       --fg-primary-light: #9C27B0;
       --fg-secondary: #7B1FA2;
       --fg-secondary-light: #BA68C8;
-
-      /* Aksentfarger (fra bar-chart logo) */
       --fg-accent-blue: #0099FF;
       --fg-accent-orange: #FF9900;
       --fg-accent-green: #00AA33;
-
-      /* Gradient */
       --fg-gradient-primary: linear-gradient(135deg, #6B1B9A 0%, #7B1FA2 100%);
       --fg-gradient-accent: linear-gradient(135deg, #0099FF 0%, #FF9900 50%, #00AA33 100%);
-
-      /* Nøytrale */
       --fg-white: #FFFFFF;
       --fg-light-bg: #F5F3F7;
       --fg-gray-50: #FAFAFA;
@@ -43,27 +31,20 @@
       --fg-gray-700: #444440;
       --fg-gray-800: #2A2A28;
       --fg-gray-900: #1A1A18;
-
       --fg-text-primary: #1A1A18;
       --fg-text-secondary: #666660;
       --fg-text-light: #FFFFFF;
       --fg-border: #D0CAD8;
-
-      /* Feedback */
       --fg-success: #00AA33;
       --fg-warning: #FF9900;
       --fg-error: #D32F2F;
       --fg-info: #0099FF;
-
-      /* Spacing */
       --spacing-xs: 4px;
       --spacing-sm: 8px;
       --spacing-md: 16px;
       --spacing-lg: 24px;
       --spacing-xl: 32px;
       --spacing-xxl: 48px;
-
-      /* Typography */
       --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       --font-size-xs: 12px;
       --font-size-sm: 14px;
@@ -73,38 +54,28 @@
       --font-size-2xl: 24px;
       --font-size-3xl: 28px;
       --font-size-4xl: 32px;
-
-      /* Shadows */
       --shadow-sm: 0 1px 2px rgba(107, 27, 154, 0.05);
       --shadow-md: 0 4px 6px rgba(107, 27, 154, 0.07);
       --shadow-lg: 0 10px 15px rgba(107, 27, 154, 0.1);
-
-      /* Radius */
       --radius-sm: 4px;
       --radius-md: 8px;
       --radius-lg: 12px;
       --radius-xl: 16px;
       --radius-2xl: 24px;
-
-      /* Transitions */
       --transition-fast: 150ms ease-in-out;
       --transition-normal: 250ms ease-in-out;
     }
-
-    /* ═══════════════════════════════════════════════════════════════════════════
-       GLOBAL STYLES
-       ═══════════════════════════════════════════════════════════════════════════ */
-
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     html {
       scroll-behavior: smooth;
     }
-
+    
     body {
       font-family: var(--font-family);
       font-size: var(--font-size-base);
@@ -115,52 +86,21 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    
+    h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: var(--spacing-md);
     }
-
-    h1 {
-      font-size: var(--font-size-4xl);
-      color: var(--fg-primary);
-    }
-
-    h2 {
-      font-size: var(--font-size-3xl);
-      color: var(--fg-primary);
-    }
-
-    h3 {
-      font-size: var(--font-size-2xl);
-      color: var(--fg-primary-dark);
-      margin-top: var(--spacing-lg);
-    }
-
-    h4 {
-      font-size: var(--font-size-xl);
-    }
-
-    p {
-      margin-bottom: var(--spacing-md);
-      line-height: 1.75;
-    }
-
-    small {
-      font-size: var(--font-size-sm);
-      color: var(--fg-text-secondary);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════════════
-       BUTTON STYLES
-       ═══════════════════════════════════════════════════════════════════════════ */
-
+    
+    h1 { font-size: var(--font-size-4xl); color: var(--fg-primary); }
+    h2 { font-size: var(--font-size-3xl); color: var(--fg-primary); }
+    h3 { font-size: var(--font-size-2xl); color: var(--fg-primary-dark); margin-top: var(--spacing-lg); }
+    h4 { font-size: var(--font-size-xl); }
+    
+    p { margin-bottom: var(--spacing-md); line-height: 1.75; }
+    small { font-size: var(--font-size-sm); color: var(--fg-text-secondary); }
+    
     .btn {
       display: flex;
       align-items: center;
@@ -176,44 +116,40 @@
       min-height: 44px;
       white-space: nowrap;
     }
-
+    
     .btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
-
+    
     .btn-primary {
       background: var(--fg-gradient-primary);
       color: var(--fg-text-light);
       box-shadow: var(--shadow-md);
     }
-
+    
     .btn-primary:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
     }
-
+    
     .btn-secondary {
       background: var(--fg-light-bg);
       color: var(--fg-primary);
       border: 2px solid var(--fg-primary);
     }
-
+    
     .btn-secondary:hover:not(:disabled) {
       background: var(--fg-primary);
       color: var(--fg-text-light);
     }
-
-    /* ═══════════════════════════════════════════════════════════════════════════
-       FORM STYLES
-       ═══════════════════════════════════════════════════════════════════════════ */
-
+    
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: var(--spacing-lg);
     }
-
+    
     .header {
       text-align: center;
       margin-bottom: var(--spacing-xxl);
@@ -222,7 +158,7 @@
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-sm);
     }
-
+    
     .logo-container {
       width: 280px;
       height: 280px;
@@ -234,76 +170,76 @@
       align-items: center;
       justify-content: center;
     }
-
+    
     .logo-container svg {
       width: 100%;
       height: auto;
       object-fit: contain;
     }
-
+    
     .header h1 {
       margin-bottom: var(--spacing-sm);
       font-size: 2.5rem;
     }
-
+    
     .header p {
       color: var(--fg-text-secondary);
       font-size: var(--font-size-lg);
       margin: 0;
     }
-
+    
     .form-container {
       background: var(--fg-white);
       border-radius: var(--radius-xl);
       padding: var(--spacing-xxl);
       box-shadow: var(--shadow-md);
     }
-
+    
     .form-section {
       margin-bottom: var(--spacing-xxl);
       padding-bottom: var(--spacing-xxl);
       border-bottom: 2px solid var(--fg-border);
     }
-
+    
     .form-section:last-of-type {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
-
+    
     .form-section h2 {
       margin-bottom: var(--spacing-lg);
       padding-bottom: var(--spacing-md);
       border-bottom: 3px solid var(--fg-primary);
       display: inline-block;
     }
-
+    
     .form-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-lg);
       margin-bottom: var(--spacing-lg);
     }
-
+    
     .form-row.full {
       grid-template-columns: 1fr;
     }
-
+    
     .form-row.grid-3 {
       grid-template-columns: repeat(3, 1fr);
     }
-
+    
     .form-group {
       display: flex;
       flex-direction: column;
     }
-
+    
     .form-label {
       font-weight: 600;
       margin-bottom: var(--spacing-sm);
       color: var(--fg-text-primary);
     }
-
+    
     .form-input,
     .form-select,
     .form-textarea {
@@ -317,7 +253,7 @@
       background: var(--fg-white);
       color: var(--fg-text-primary);
     }
-
+    
     .form-input:focus,
     .form-select:focus,
     .form-textarea:focus {
@@ -325,17 +261,16 @@
       border-color: var(--fg-primary);
       box-shadow: 0 0 0 3px rgba(107, 27, 154, 0.1);
     }
-
+    
     .form-input::placeholder {
       color: var(--fg-gray-400);
     }
-
+    
     .form-textarea {
       resize: vertical;
       min-height: 100px;
     }
-
-    /* Info box */
+    
     .info-box {
       background: rgba(0, 153, 255, 0.08);
       border-left: 4px solid var(--fg-info);
@@ -344,27 +279,18 @@
       margin-bottom: var(--spacing-lg);
       line-height: 1.75;
     }
-
+    
     .info-box strong {
       color: var(--fg-primary);
     }
-
-    .info-box code {
-      background: rgba(107, 27, 154, 0.1);
-      padding: 2px 6px;
-      border-radius: var(--radius-sm);
-      font-family: monospace;
-      color: var(--fg-primary-dark);
-    }
-
-    /* Checkbox & Radio */
+    
     .checkbox-group,
     .radio-group {
       display: flex;
       flex-direction: column;
       gap: var(--spacing-md);
     }
-
+    
     .checkbox-item,
     .radio-item {
       display: flex;
@@ -376,47 +302,46 @@
       transition: all var(--transition-fast);
       cursor: pointer;
     }
-
+    
     .checkbox-item:hover,
     .radio-item:hover {
       background: rgba(107, 27, 154, 0.08);
     }
-
+    
     .checkbox-item input,
     .radio-item input {
       margin-top: 4px;
       cursor: pointer;
       accent-color: var(--fg-primary);
     }
-
+    
     .checkbox-label,
     .radio-label {
       flex: 1;
       cursor: pointer;
     }
-
+    
     .checkbox-label strong,
     .radio-label strong {
       display: block;
       color: var(--fg-primary);
       font-weight: 600;
     }
-
+    
     .checkbox-label small,
     .radio-label small {
       display: block;
       color: var(--fg-text-secondary);
       margin-top: 4px;
     }
-
-    /* Buttons */
+    
     .form-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--spacing-lg);
       margin-top: var(--spacing-xxl);
     }
-
+    
     .btn-submit,
     .btn-reset {
       width: 100%;
@@ -424,40 +349,37 @@
       font-size: var(--font-size-lg);
       font-weight: 700;
     }
-
-    /* Hidden form group */
+    
     .form-group-hidden {
       display: none;
     }
-
+    
     .form-group-hidden.visible {
       display: flex;
     }
-
-    /* Success message */
+    
     .form-success {
       display: none;
       text-align: center;
       padding: var(--spacing-xxl);
     }
-
+    
     .form-success.visible {
       display: block;
     }
-
+    
     .form-success h2 {
       color: var(--fg-success);
       margin-bottom: var(--spacing-lg);
     }
-
+    
     .check-mark {
       font-size: 60px;
       color: var(--fg-success);
       margin-bottom: var(--spacing-lg);
       display: block;
     }
-
-    /* Disclaimer */
+    
     .disclaimer {
       background: var(--fg-light-bg);
       padding: var(--spacing-lg);
@@ -467,12 +389,11 @@
       margin-top: var(--spacing-lg);
       line-height: 1.75;
     }
-
-    /* Progress */
+    
     .form-progress {
       margin-bottom: var(--spacing-xl);
     }
-
+    
     .progress-bar {
       width: 100%;
       height: 4px;
@@ -480,63 +401,43 @@
       border-radius: 9999px;
       overflow: hidden;
     }
-
+    
     .progress-fill {
       height: 100%;
       background: var(--fg-gradient-primary);
       transition: width var(--transition-normal);
       width: 0%;
     }
-
-    /* Responsive */
+    
     @media (max-width: 768px) {
       .container {
         padding: var(--spacing-md);
       }
-
       .form-container {
         padding: var(--spacing-lg);
       }
-
       .form-row,
       .form-row.grid-3 {
         grid-template-columns: 1fr;
       }
-
       .form-buttons {
         grid-template-columns: 1fr;
       }
-
       .header {
         padding: var(--spacing-xl) var(--spacing-md);
         margin-bottom: var(--spacing-lg);
       }
-
       .logo-container {
         width: 180px;
         height: 180px;
       }
-
-      .form-section {
-        margin-bottom: var(--spacing-lg);
-        padding-bottom: var(--spacing-lg);
-      }
-
-      h1 {
-        font-size: var(--font-size-2xl);
-      }
-
-      h2 {
-        font-size: var(--font-size-xl);
-      }
+      h1 { font-size: var(--font-size-2xl); }
+      h2 { font-size: var(--font-size-xl); }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
-    <!-- HEADER MED STOR LOGO -->
     <div class="header">
       <div class="logo-container">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -546,35 +447,28 @@
               <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:1" />
             </linearGradient>
           </defs>
-          <!-- Purple shapes (background) -->
-          <polygon points="50,80 80,150 120,140 100,70" fill="#6B1B9A" opacity="0.8" />
-          <polygon points="70,100 110,160 140,150 110,90" fill="#7B1FA2" opacity="0.6" />
-          <!-- Bar chart -->
-          <rect x="85" y="120" width="15" height="40" fill="#0099FF" />
-          <rect x="105" y="110" width="15" height="50" fill="#FF9900" />
-          <rect x="125" y="95" width="15" height="65" fill="#00AA33" />
-          <!-- Circle border -->
-          <circle cx="105" cy="120" r="55" fill="none" stroke="#6B1B9A" stroke-width="2" />
+          <polygon points="50,80 80,150 120,140 100,70" fill="#6B1B9A" opacity="0.8"/>
+          <polygon points="70,100 110,160 140,150 110,90" fill="#7B1FA2" opacity="0.6"/>
+          <rect x="85" y="120" width="15" height="40" fill="#0099FF"/>
+          <rect x="105" y="110" width="15" height="50" fill="#FF9900"/>
+          <rect x="125" y="95" width="15" height="65" fill="#00AA33"/>
+          <circle cx="105" cy="120" r="55" fill="none" stroke="#6B1B9A" stroke-width="2"/>
         </svg>
       </div>
       <h1>Energirapport</h1>
       <p>Fagmann Digital - Din energirådgiver</p>
     </div>
-
-    <!-- MAIN FORM -->
+    
     <form id="energyForm" class="form-container">
-
-      <!-- Progress bar -->
       <div class="form-progress">
         <div class="progress-bar">
           <div class="progress-fill" id="progressFill"></div>
         </div>
       </div>
-
-      <!-- SEKSJON 1: GRUNNLEGGENDE INFORMASJON -->
+      
       <section class="form-section">
         <h2>📋 Grunnleggende Informasjon</h2>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Fullt navn *</label>
@@ -585,7 +479,7 @@
             <input type="email" name="email" class="form-input" required>
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Telefon</label>
@@ -596,7 +490,7 @@
             <input type="text" name="municipality" class="form-input" required placeholder="F.eks. Kristiansand">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Bygningstype *</label>
@@ -613,7 +507,7 @@
             <input type="text" name="address" class="form-input" required placeholder="Eksempel Veien 42">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Byggeår *</label>
@@ -625,15 +519,14 @@
           </div>
         </div>
       </section>
-
-      <!-- SEKSJON 2: ENERGIBRUK -->
+      
       <section class="form-section">
         <h2>⚡ Energibruk</h2>
-
+        
         <div class="info-box">
           📊 <strong>Hvor finner du data?</strong> Se på dine siste strøm- og gasregninger for årlig forbruk.
         </div>
-
+        
         <div class="form-row full">
           <div class="form-group">
             <label class="form-label">Årlig strømforbruk (kWh) *</label>
@@ -641,7 +534,7 @@
             <small>Fra strømregningen din</small>
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Oppvarmingstype *</label>
@@ -659,7 +552,7 @@
             <input type="number" name="heatingSystemAge" class="form-input" min="0" max="100" placeholder="15">
           </div>
         </div>
-
+        
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Varmegjenvinning?</label>
@@ -679,21 +572,20 @@
             </select>
           </div>
         </div>
-
+        
         <div class="form-group-hidden" id="solarKwGroup">
           <label class="form-label">Solcelle størrelse (kWp)</label>
           <input type="number" name="solarPanelKw" class="form-input" step="0.1" placeholder="5">
         </div>
       </section>
-
-      <!-- SEKSJON 3: BYGNINGSKVALITET (TEK17) -->
+      
       <section class="form-section">
         <h2>🏠 Bygningskvalitet (TEK17)</h2>
-
+        
         <div class="info-box">
           📘 <strong>TEK17</strong> = Teknisk Forskrift for energieffektivitet i Norge
         </div>
-
+        
         <h3>Isolasjon - U-verdier</h3>
         <div class="form-row grid-3">
           <div class="form-group">
@@ -729,7 +621,7 @@
             <small>TEK-krav: maks 0,22</small>
           </div>
         </div>
-
+        
         <h3>Vinduer - KRITISK</h3>
         <div class="form-row">
           <div class="form-group">
@@ -748,7 +640,7 @@
             <input type="number" name="windowsYear" class="form-input" placeholder="10">
           </div>
         </div>
-
+        
         <h3>Lufttetthet & Ventilasjon</h3>
         <div class="form-row">
           <div class="form-group">
@@ -757,7 +649,7 @@
               <option value="">-- Velg --</option>
               <option value="poor">Dårlig (>3,0)</option>
               <option value="average">Gjennomsnittlig (1,5-3,0)</option>
-              <option value="good">God (<1,5)< /option>
+              <option value="good">God (<1,5)</option>
             </select>
             <small>TEK-krav: Maks 1,5 luftveksl/time</small>
           </div>
@@ -773,15 +665,14 @@
           </div>
         </div>
       </section>
-
-      <!-- SEKSJON 4: ENOVA-INTERESSE -->
+      
       <section class="form-section">
         <h2>💰 Enova-Støtte</h2>
-
+        
         <div class="info-box">
           🎁 <strong>Enova kan betale 25-30% av energitiltak!</strong> Vi hjelper deg med søknad - helt gratis!
         </div>
-
+        
         <div class="form-row full">
           <div class="form-group">
             <label class="form-label">Interessert i Enova-støtte? *</label>
@@ -801,33 +692,33 @@
             </div>
           </div>
         </div>
-
+        
         <div id="enovaDetails" class="form-group-hidden">
           <h3>✓ Hvilke tiltak interesserer deg?</h3>
           <div class="checkbox-group">
             <label class="checkbox-item">
-              <input type="checkbox" name="enova_heatpump_interest" class="form-checkbox">
+              <input type="checkbox" name="enova_heatpump_interest">
               <span class="checkbox-label">
                 <strong>🔥 Varmepumpe</strong>
                 <small>Opptil 20.000 kr støtte</small>
               </span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" name="enova_insulation_interest" class="form-checkbox">
+              <input type="checkbox" name="enova_insulation_interest">
               <span class="checkbox-label">
                 <strong>🧊 Etterisolering</strong>
                 <small>25% av kostnad - NYT 2025!</small>
               </span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" name="enova_solar_interest" class="form-checkbox">
+              <input type="checkbox" name="enova_solar_interest">
               <span class="checkbox-label">
                 <strong>☀️ Solceller</strong>
                 <small>25% av kostnad</small>
               </span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" name="enova_energyadvisor_interest" class="form-checkbox">
+              <input type="checkbox" name="enova_energyadvisor_interest">
               <span class="checkbox-label">
                 <strong>👨‍💼 Energirådgiver</strong>
                 <small>Opptil 5.000 kr</small>
@@ -836,12 +727,11 @@
           </div>
         </div>
       </section>
-
-      <!-- SEKSJON 5: NÆRINGSBYGG (Betinget) -->
+      
       <section class="form-section form-group-hidden" id="businessSection">
         <h2>🏢 Næringsbygg</h2>
-
-        <div class="form-row grid-2">
+        
+        <div class="form-row">
           <div class="form-group">
             <label class="form-label">Bygg-kategori</label>
             <select name="businessType" class="form-select">
@@ -858,8 +748,7 @@
           </div>
         </div>
       </section>
-
-      <!-- BUTTONS -->
+      
       <div class="form-buttons">
         <button type="submit" class="btn btn-primary btn-submit">
           📊 Generer Energirapport
@@ -868,18 +757,15 @@
           🔄 Nullstill
         </button>
       </div>
-
-      <!-- Disclaimer -->
+      
       <div class="disclaimer">
         <strong>✓ Dine data:</strong><br>
         ✓ Behandles konfidensielt<br>
         ✓ Sendes kun til deg<br>
         ✓ Kan trekke tilbake når som helst
       </div>
-
     </form>
-
-    <!-- SUCCESS MESSAGE -->
+    
     <div class="form-success" id="successMessage">
       <span class="check-mark">✅</span>
       <h2>Rapport genereres!</h2>
@@ -887,43 +773,50 @@
       <p style="font-weight: bold; color: var(--fg-primary);" id="successEmail"></p>
       <p>Du mottar den på e-post innen <strong>5-10 minutter</strong>.</p>
     </div>
-
   </div>
-
-  <!-- JavaScript -->
+  
   <script>
-    // ═══════════════════════════════════════════════════════════════════════════
-    // WEBHOOK CONFIGURATION
-    // ═══════════════════════════════════════════════════════════════════════════
-    // ENDRE DENNE URL-EN TIL DIN N8N WEBHOOK URL:
-    const WEBHOOK_URL = 'Production URL: const WEBHOOK_URL = 'https://n8n.srv1184377.hstgr.cloud/webhook-test/2585c355-94a8-4fee-b3e4-cab2f8ab35c8';';
-    // Eksempel: https://n8n.srv1184377.hstgr.cloud/webhook-te/[]
-    // ═══════════════════════════════════════════════════════════════════════════
-
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 🔴 WEBHOOK CONFIGURATION - LIME INN N8N WEBHOOK URL HER! 🔴
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 
+    // 1. Gå til n8n
+    // 2. Finn Webhook node
+    // 3. Kopier "Test URL" (tab)
+    // 4. Lime inn hele URL-en mellom de to enkle hermetegnene under:
+    //
+    // Eksempel:
+    // const WEBHOOK_URL = 'https://n8n.srv1184377.hstgr.cloud/webhook-test/2585c355-94a8-4fee-b3e4-cab2f8ab35c8';
+    //
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    
+    const WEBHOOK_URL = 'https://n8n.srv1184377.hstgr.cloud/webhook-test/2585c355-94a8-4fee-b3e4-cab2f8ab35c8';
+    
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    
     function updateFormFields() {
-      
       const type = document.querySelector('select[name="propertyType"]').value;
       const businessSection = document.getElementById('businessSection');
       businessSection.classList.toggle('visible', type === 'næringsbygg');
       updateProgress();
     }
-
+    
     function updateHeatingFields() {
       updateProgress();
     }
-
+    
     function updateSolarFields() {
       const hasSolar = document.querySelector('select[name="solarPanels"]').value === 'true';
       document.getElementById('solarKwGroup').classList.toggle('visible', hasSolar);
       updateProgress();
     }
-
+    
     function updateEnovaFields() {
       const interested = document.querySelector('input[name="interestedInEnova"]:checked')?.value === 'true';
       document.getElementById('enovaDetails').classList.toggle('visible', interested);
       updateProgress();
     }
-
+    
     function updateProgress() {
       const form = document.getElementById('energyForm');
       const formFields = form.querySelectorAll('input[required], select[required]');
@@ -936,23 +829,23 @@
       const progress = (filledFields.length / formFields.length) * 100;
       document.getElementById('progressFill').style.width = progress + '%';
     }
-
+    
     document.getElementById('energyForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(document.getElementById('energyForm'));
       const data = Object.fromEntries(formData);
-
+      
       const submitBtn = document.querySelector('.btn-submit');
       submitBtn.innerHTML = '⏳ Genererer...';
       submitBtn.disabled = true;
-
+      
       try {
         const response = await fetch(WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-
+        
         if (response.ok) {
           document.getElementById('energyForm').style.display = 'none';
           document.getElementById('successMessage').classList.add('visible');
@@ -970,7 +863,7 @@
         submitBtn.disabled = false;
       }
     });
-
+    
     document.addEventListener('DOMContentLoaded', () => {
       updateFormFields();
       updateProgress();
@@ -979,5 +872,4 @@
     });
   </script>
 </body>
-
 </html>
